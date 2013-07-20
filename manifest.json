@@ -1,0 +1,16 @@
+{ 
+    "manifest_version" : 2,
+    "name" : "Buzzfeed Blocker",
+    "version" : "0.1",
+    "description" : "Block Buzzfeed links from your Facebook news feed.",
+    "background": {
+        "scripts" : ["background.js"]
+    },
+    "permissions" : ["*://*.facebook.com/*", "webRequest", "tabs"],
+    "content_scripts" : [
+        {
+            "matches" : ["*://*.facebook.com/*"],
+            "js" : ["jquery-2.0.2.min.js", "blocker.js"]
+        }
+    ]
+}
